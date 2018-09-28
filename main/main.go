@@ -1,7 +1,8 @@
 package main
 
-import "github.com/vchatchai/go102/stos"
+import "github.com/vchatchai/go102/stflag"
 
 func main() {
-	stos.Arguments()
+	// stos.Arguments()
+	stflag.Flag()
 }
