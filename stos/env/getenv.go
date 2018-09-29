@@ -5,9 +5,7 @@ import (
 	"os"
 )
 
-const GOROOT = "GOROOT"
-
-func GetENV() {
-	connStr := os.Getenv(GOROOT)
-	log.Println(GOROOT, connStr)
+func GetENV(key string) {
+	connStr := os.Getenv(key)
+	log.Println(key, connStr)
 }

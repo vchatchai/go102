@@ -3,16 +3,20 @@ package env
 import "testing"
 
 func TestGetENV(t *testing.T) {
+	type args struct {
+		key string
+	}
 	tests := []struct {
 		name string
+		args args
 	}{
-		{"GET ENV"},
+		{"Test GETENV GOPATH", args{"GOPATH"}},
+		{"Test GETENV test", args{"test"}},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			GetENV()
+			GetENV(tt.args.key)
 		})
 	}
-
-	t.Error("DONE.")
+	t.Error()
 }
