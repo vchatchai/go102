@@ -9,5 +9,6 @@ func main() {
 
 	// stexec.Exec()
 
-	stexec.Asynchronous()
+	// stexec.Asynchronous()
+	stexec.ReadBufferChildProcess()
 }
