@@ -18,7 +18,7 @@ func Asynchronous() {
 	prc.Wait()
 
 	if prc.ProcessState.Success() {
-		fmt.Println("Process run successfully with output:\n")
+		fmt.Println("Process run successfully with output:")
 		fmt.Println(prc.Stdout)
 	}
 }
