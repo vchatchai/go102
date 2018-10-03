@@ -1,6 +1,6 @@
 package main
 
-import "github.com/vchatchai/go102/stos/stexec"
+import "github.com/vchatchai/go102/stos/stsignal"
 
 func main() {
 	// stos.Arguments()
@@ -10,5 +10,7 @@ func main() {
 	// stexec.Exec()
 
 	// stexec.Asynchronous()
-	stexec.ReadBufferChildProcess()
+	// stexec.ReadBufferChildProcess()
+	// stexec.WriteChileProcess()
+	stsignal.Shutdown()
 }
