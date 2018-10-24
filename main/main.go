@@ -19,7 +19,7 @@ func main() {
 	// stexec.WriteChileProcess()
 	// stsignal.Shutdown()
 	// Cal()
-	stfmt.Scanf()
+	stfmt.Scanner()
 }
 
 func Cal() {
