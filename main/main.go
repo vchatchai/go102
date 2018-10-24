@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/rhymond/go-money"
-	"github.com/vchatchai/go102/stfmt"
+	"github.com/vchatchai/go102/stos"
 )
 
 func main() {
@@ -19,7 +19,8 @@ func main() {
 	// stexec.WriteChileProcess()
 	// stsignal.Shutdown()
 	// Cal()
-	stfmt.Scanner()
+	// stfmt.Scanner()
+	stos.Reader()
 }
 
 func Cal() {
