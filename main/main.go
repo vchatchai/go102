@@ -20,7 +20,8 @@ func main() {
 	// stsignal.Shutdown()
 	// Cal()
 	// stfmt.Scanner()
-	stos.Reader()
+	// stos.Reader()
+	stos.Stdouterr()
 }
 
 func Cal() {
