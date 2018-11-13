@@ -4,7 +4,7 @@ import (
 	"log"
 
 	"github.com/rhymond/go-money"
-	"github.com/vchatchai/go102/stos"
+	"github.com/vchatchai/go102/stdatabase/stsql"
 )
 
 func main() {
@@ -21,7 +21,8 @@ func main() {
 	// Cal()
 	// stfmt.Scanner()
 	// stos.Reader()
-	stos.Stdouterr()
+	// stos.Stdouterr()
+	stsql.Cancelable()
 }
 
 func Cal() {
