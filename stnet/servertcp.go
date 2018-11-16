@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"net"
+	"strings"
 )
 
 func ServerTCP() {
@@ -19,6 +20,9 @@ func ServerTCP() {
 		if err != nil {
 			panic(err)
 		}
+
+		channel := make(chan string, 1)
+
 		go func() {
 			for {
 				msg, err := bufio.NewReader(conn).ReadString('\n')
@@ -26,9 +30,22 @@ func ServerTCP() {
 					panic(err)
 				}
 
-				if msg == "q" {
+				channel <- msg
+				fmt.Printf("%+q", strings.TrimRight(msg, "\r\n"))
+				fmt.Printf("%+q", "q")
+				if strings.TrimRight(msg, "\r\n") == "q" {
+					fmt.Println("quiting...")
+					close(channel)
 					conn.Close()
+
+					return
 				}
+
+			}
+
+		}()
+		go func() {
+			for msg := range channel {
 
 				_, err = io.WriteString(conn, "Received: "+string(msg))
 				if err != nil {
@@ -37,6 +54,5 @@ func ServerTCP() {
 			}
 
 		}()
-
 	}
 }
