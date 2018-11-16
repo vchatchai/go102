@@ -13,6 +13,7 @@ func ServerTCP() {
 	if err != nil {
 		panic(err)
 	}
+	defer l.Close()
 
 	for {
 		fmt.Println("Waiting for client...")
