@@ -31,9 +31,10 @@ func ServerTCP() {
 				}
 
 				channel <- msg
-				fmt.Printf("%+q", strings.TrimRight(msg, "\r\n"))
-				fmt.Printf("%+q", "q")
-				if strings.TrimRight(msg, "\r\n") == "q" {
+				fmt.Printf("%+q :\n", strings.TrimSpace(msg))
+				fmt.Printf("%+q :\n", strings.TrimRight(msg, "\r\n"))
+				fmt.Printf("%+q :\n", "q")
+				if strings.TrimSpace(msg) == "q" {
 					fmt.Println("quiting...")
 					close(channel)
 					conn.Close()
