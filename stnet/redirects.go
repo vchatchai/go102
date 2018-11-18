@@ -17,7 +17,7 @@ func (s *RedirectServer) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	http.Redirect(rw, req, fmt.Sprintf("/redirect%d", s.redirectCount), http.StatusTemporaryRedirect)
 }
 
-func Redirect() {
+func Redirects() {
 	s := http.Server{
 		Addr:    addr,
 		Handler: &RedirectServer{0},
