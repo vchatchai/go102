@@ -31,10 +31,11 @@ func Pool() {
 		go func(idx int) {
 			w := pool.Get().(*Worker)
 			fmt.Println("Got worker ID:" + w.String())
-			time.Sleep(time.Millisecond * 80)
+			time.Sleep(time.Second)
 			pool.Put(w)
 			wg.Done()
 		}(i)
+		time.Sleep(time.Second)
 	}
 	wg.Wait()
 }
